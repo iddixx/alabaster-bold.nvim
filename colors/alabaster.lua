@@ -144,7 +144,7 @@ if vim.o.background == "dark" then
         Statement = { fg = def_fg, bold = true },
         Conditional = { fg = def_fg, bold = true },
         Repeat = { fg = def_fg, bold = true },
-        Label = { fg = def_fg },
+        Label = { fg = ansi.white },
         Keyword = { fg = def_fg, bold = true },
         Exception = { fg = ansi.white },
         PreProc = { fg = "#54699C" },
