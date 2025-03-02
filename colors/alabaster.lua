@@ -136,7 +136,7 @@ if vim.o.background == "dark" then
         Number = { fg = const_fg },
         Boolean = { fg = const_fg },
         Float = { fg = const_fg },
-        Operator = { fg = punct_fg },
+        Operator = { fg = def_fg, bold = true },
 
         --- SYNTAX II: TS groups have their own definition, the below are defined to have somewhat working hl w/o treesitter
         Identifier = { fg = ansi.white },
@@ -145,17 +145,17 @@ if vim.o.background == "dark" then
         Conditional = { fg = ansi.white },
         Repeat = { fg = ansi.white },
         Label = { fg = def_fg },
-        Keyword = { fg = ansi.white, bold = true },
+        Keyword = { fg = def_fg, bold = true },
         Exception = { fg = ansi.white },
         PreProc = { fg = ansi.white },
         Include = { fg = ansi.white },
         Define = { fg = ansi.white },
         Macro = { fg = ansi.white },
         PreCondit = { fg = ansi.white },
-        Type = { fg = ansi.white, bold = true },
+        Type = { fg = punct_fg, bold = true },
         StorageClass = { fg = ansi.white },
         Structure = { fg = def_fg, bold = true },
-        Typedef = { fg = def_fg },
+        Typedef = { fg = def_fg, bold = true },
 
         Special = { fg = ansi.yellow },
         -- TODO better color than diffchange, try reddish
@@ -511,7 +511,7 @@ else
         Number = { fg = const_fg },
         Boolean = { fg = const_fg },
         Float = { fg = const_fg },
-        Operator = { fg = punct_fg },
+        Operator = { fg = def_fg, bold = true },
 
         --- SYNTAX II: TS groups have their own definition, the below are defined to have somewhat working hl w/o treesitter
         Identifier = { fg = ansi.black },
@@ -520,7 +520,7 @@ else
         Conditional = { fg = ansi.black },
         Repeat = { fg = ansi.black },
         Label = { fg = def_fg },
-        Keyword = { fg = ansi.black, bold = true },
+        Keyword = { fg = def_fg, bold = true },
         Exception = { fg = ansi.black },
         PreProc = { fg = ansi.black },
         Include = { fg = ansi.black },
@@ -530,7 +530,7 @@ else
         Type = { fg = ansi.black, bold = true },
         StorageClass = { fg = ansi.black },
         Structure = { fg = def_fg, bold = true },
-        Typedef = { fg = def_fg },
+        Typedef = { fg = def_fg, bold = true },
 
         Special = { fg = ansi.yellow },
         -- TODO better color than diffchange, try reddish
