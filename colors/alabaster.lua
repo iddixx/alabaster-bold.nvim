@@ -153,7 +153,7 @@ if vim.o.background == "dark" then
         Macro = { fg = "#54699C" },
         PreCondit = { fg = "#54699C" },
         Type = { fg = punct_fg },
-        StorageClass = { fg = ansi.white },
+        StorageClass = { fg = def_fg },
         Structure = { fg = def_fg, bold = true },
         Typedef = { fg = def_fg, bold = true },
 
