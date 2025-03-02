@@ -141,12 +141,12 @@ if vim.o.background == "dark" then
         --- SYNTAX II: TS groups have their own definition, the below are defined to have somewhat working hl w/o treesitter
         Identifier = { fg = ansi.white },
         Function = { fg = ansi.white },
-        Statement = { fg = def_fg },
+        Statement = { fg = def_fg, bold = true },
         Conditional = { fg = def_fg, bold = true },
         Repeat = { fg = def_fg, bold = true },
         Label = { fg = def_fg },
         Keyword = { fg = def_fg, bold = true },
-        Exception = { fg = ansi.wite },
+        Exception = { fg = ansi.white },
         PreProc = { fg = "#54699C" },
         Include = { fg = "#54699C" },
         Define = { fg = "#54699C" },
@@ -516,7 +516,7 @@ else
         --- SYNTAX II: TS groups have their own definition, the below are defined to have somewhat working hl w/o treesitter
         Identifier = { fg = ansi.black },
         Function = { fg = ansi.black },
-        Statement = { fg = def_fg },
+        Statement = { fg = def_fg, bold = true },
         Conditional = { fg = def_fg, bold = true },
         Repeat = { fg = def_fg, bold = true },
         Label = { fg = def_fg },
