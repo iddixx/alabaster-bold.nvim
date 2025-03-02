@@ -154,7 +154,7 @@ if vim.o.background == "dark" then
         PreCondit = { fg = ansi.white },
         Type = { fg = ansi.white, bold = true },
         StorageClass = { fg = ansi.white },
-        Structure = { fg = def_fg },
+        Structure = { fg = def_fg, bold = true },
         Typedef = { fg = def_fg },
 
         Special = { fg = ansi.yellow },
@@ -529,7 +529,7 @@ else
         PreCondit = { fg = ansi.black },
         Type = { fg = ansi.black, bold = true },
         StorageClass = { fg = ansi.black },
-        Structure = { fg = def_fg },
+        Structure = { fg = def_fg, bold = true },
         Typedef = { fg = def_fg },
 
         Special = { fg = ansi.yellow },
