@@ -155,7 +155,7 @@ if vim.o.background == "dark" then
         Type = { fg = punct_fg },
         StorageClass = { fg = ansi.white },
         Structure = { fg = def_fg, bold = true },
-        Typedef = { fg = def_fg, bold = true },
+        Typedef = { fg = ansi.white },
 
         Special = { fg = ansi.yellow },
         -- TODO better color than diffchange, try reddish
