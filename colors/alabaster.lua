@@ -41,6 +41,7 @@ if vim.o.background == "dark" then
     local statusline = "#162022"
     local comment = "#E0C590"
     local dim_comment = "#696969"
+    local function_fg = "#d496de"
     local mistake = {
         fg = "#c33c33",
         bg = "#2b1d1e",
@@ -140,7 +141,7 @@ if vim.o.background == "dark" then
 
         --- SYNTAX II: TS groups have their own definition, the below are defined to have somewhat working hl w/o treesitter
         Identifier = { fg = ansi.white },
-        Function = { fg = ansi.white },
+        Function = { fg = function_fg },
         Statement = { fg = def_fg, bold = true },
         Conditional = { fg = def_fg, bold = true },
         Repeat = { fg = def_fg, bold = true },
