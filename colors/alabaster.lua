@@ -30,6 +30,7 @@ if vim.o.background == "dark" then
     local bg = "#0B1722"
     local fg = "#cecece"
     local punct_fg = "#708b8d"
+    local preproc_fg = "#54699C"
     local def_fg = "#71ade7"
     local const_fg = "#cc8bc9"
     local active = "#cd974b"
@@ -148,11 +149,11 @@ if vim.o.background == "dark" then
         Label = { fg = ansi.white },
         Keyword = { fg = def_fg, bold = true },
         Exception = { fg = ansi.white },
-        PreProc = { fg = "#54699C" },
-        Include = { fg = "#54699C" },
-        Define = { fg = "#54699C" },
-        Macro = { fg = "#54699C" },
-        PreCondit = { fg = "#54699C" },
+        PreProc = { fg = preproc_fg },
+        Include = { fg = preproc_fg },
+        Define = { fg = preproc_fg },
+        Macro = { fg = preproc_fg },
+        PreCondit = { fg = preproc_fg },
         Type = { fg = punct_fg },
         StorageClass = { fg = def_fg, bold = true },
         Structure = { fg = def_fg, bold = true },
@@ -385,91 +386,93 @@ if vim.o.background == "dark" then
 else
     -- terminal colors
     vim.g.terminal_color_0 = "#000000"
-    vim.g.terminal_color_1 = "#aa3731"
-    vim.g.terminal_color_2 = "#448c27"
-    vim.g.terminal_color_3 = "#cb9000"
-    vim.g.terminal_color_4 = "#325cc0"
-    vim.g.terminal_color_5 = "#7a3e9d"
-    vim.g.terminal_color_6 = "#0083b2"
-    vim.g.terminal_color_7 = "#f7f7f7"
-    vim.g.terminal_color_8 = "#777777"
-    vim.g.terminal_color_9 = "#f05050"
-    vim.g.terminal_color_10 = "#60cb00"
-    vim.g.terminal_color_11 = "#ffbc5d"
-    vim.g.terminal_color_12 = "#007acc"
-    vim.g.terminal_color_13 = "#e64ce6"
-    vim.g.terminal_color_14 = "#00aacb"
-    vim.g.terminal_color_15 = "#f7f7f7"
+    vim.g.terminal_color_1 = "#d2322d"
+    vim.g.terminal_color_2 = "#6abf40"
+    vim.g.terminal_color_3 = "#cd974b"
+    vim.g.terminal_color_4 = "#217EBC"
+    vim.g.terminal_color_5 = "#9B3596"
+    vim.g.terminal_color_6 = "#178F79"
+    vim.g.terminal_color_7 = "#cecece"
+    vim.g.terminal_color_8 = "#333333"
+    vim.g.terminal_color_9 = "#c33c33"
+    vim.g.terminal_color_10 = "#95cb82"
+    vim.g.terminal_color_11 = "#dfdf8e"
+    vim.g.terminal_color_12 = "#71aed7"
+    vim.g.terminal_color_13 = "#cc8bc9"
+    vim.g.terminal_color_14 = "#47BEA9"
+    vim.g.terminal_color_15 = "#ffffff"
 
     -- colors
-    local bg = "#f7f7f7"
-    local fg = "#000000"
-    local punct_fg = "#777777"
-    local def_fg = "#325cc0"
-    local const_fg = "#7a3e9d"
-    local active = "#ffbc5d"
-    local active_blue = "#007acc"
-    local string_fg = "#448c27"
+    local bg = "#331a30" -- 
+    local fg = "#cecece" 
+    local punct_fg = "#996a87" --
+    local def_fg = "#ff7fc0" --
+    local preproc_fg = "#5d3058"
+    local const_fg = "#cc8bc9"
+    local active = "#cd974b"
+    local string_fg = "#95cb82"
     local darker_fg = "#7d7d7d"
-    local diffadd = "#284918"
-    local diffdelete = "#B40600"
+    local diffadd = "#6abf40"
+    local diffdelete = "#d2322d"
     local diffchange = "#ec8013"
-    local statusline = "#c9c9c9"
-    local comment = "#A66B30"
+    local statusline = "#482544" --
+    local comment = "#9d45b3" --
     local dim_comment = "#696969"
+    local function_fg = "#723a6c"
     local mistake = {
         fg = "#c33c33",
-        bg = "#f8b28f",
-    }
-    local ansi = {
-        black = "#000000",
-        blue = "#325cc0",
-        brightyellow = "#ffbc5d",
-        cyan = "#0083b2",
-        green = "#448c27",
-        magenta = "#7a3e9d",
-        red = "#aa3731",
-        white = "#f7f7f7",
-        yellow = "#cb9000",
+        bg = "#2b1d1e",
     }
     local error = "#d13e23"
-    local warn = "#BC7500"
-    local hint = ansi.blue
-    local info = "#278C00"
+    local warn = "#f4b371"
+    local hint = "#8ebeec"
+    local info = "#88cc66"
+    local ansi = {
+        black = "#333333",
+        blue = "#71aed7",
+        brightyellow = "#dfdf8e",
+        cyan = "#47bea9",
+        green = "#95cb82",
+        magenta = "#cc8bc9",
+        red = "#c33c33",
+        white = "#cecece",
+        yellow = "#cd974b",
+        mycolor = "#ff7fc0",
+    }
     local comment_fg = vim.g.alabaster_dim_comments and dim_comment or comment
-    local pmenu_bg = "#e7e7e7"
+    local pmenu_bg = "#182325"
     local float_bg = vim.g.alabaster_floatborder and bg or pmenu_bg
-    local floatborder = vim.g.alabaster_floatborder and { bg = bg, fg = "#999999" }
+    local floatborder = vim.g.alabaster_floatborder and { bg = bg, fg = "#333333" }
         or {
             bg = float_bg,
             fg = float_bg,
         }
     theme = {
         Comment = { fg = comment_fg },
-        ColorColumn = { bg = "#E2EEEE" },
+        ColorColumn = { bg = "#3a283e" },
         Conceal = { fg = "#b0b0b0" },
-        Cursor = { bg = "#007acc", fg = "#bfdbfe" },
+        Cursor = { bg = active, fg = "#000000" },
         -- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
         -- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
-        CursorColumn = { bg = "#E2EEEE" },
-        CursorLine = { bg = "#E2EEEE" },
+        CursorColumn = { bg = "#3a283e" },
+        CursorLine = { bg = "#3a283e" },
         Directory = { fg = ansi.blue },
-        DiffAdd = { bg = "#ADFFB7", fg = "#0A7816" },
-        DiffDelete = { bg = "#F8B28F", fg = "#872C28" },
-        DiffText = { fg = "#fff987", bg = "#876004" },
-        DiffChange = { bg = "#fff987", fg = "#341a00" },
-        EndOfBuffer = { fg = "#b6b6b6" },
+        DiffAdd = { bg = "#244032", fg = "#56d364" },
+        DiffDelete = { bg = "#462c32", fg = "#f85149" },
+        DiffText = { fg = "#341a00", bg = "#fff987" },
+        DiffChange = { bg = "#341a00", fg = "#e3b341" },
+        EndOfBuffer = { fg = "#354c50" },
         -- TermCursor   { }, -- cursor in a focused terminal
         TermCursorNC = { fg = bg, bg = fg },
         ErrorMsg = { fg = error, bg = mistake.bg },
-        VertSplit = { fg = "#abbdc0" },
-        Folded = { bg = "#dddddd", fg = "#7d7d7d" },
+        VertSplit = { fg = "#2b3d40" },
+        Folded = { bg = "#182325", fg = "#7d7d7d" },
         FoldColumn = { bg = bg, fg = "#4d4d4d" },
         SignColumn = {},
-        IncSearch = { bg = active, fg = fg },
+        IncSearch = { bg = ansi.yellow, fg = bg },
         -- Substitute   { }, -- |:substitute| replacement text highlighting
-        LineNr = { fg = "#7d7c7c" },
-        CursorLineNr = { fg = ansi.blue, bold = 1 },
+        LineNr = { fg = "#5c5c5c" },
+        CursorLineNr = { fg = ansi.mycolor, bold = 1 },
         MatchParen = { underline = 1, sp = active },
         -- ModeMsg      { }, -- 'showmode' message (e.g., "-- INSERT -- ")
         -- MsgArea      { }, -- Area for messages and cmdline
@@ -481,12 +484,12 @@ else
         -- NormalNC     { }, -- normal text in non-current windows
         FloatBorder = floatborder,
         Pmenu = { bg = pmenu_bg },
-        PmenuSel = { bg = "#c7c7c7" },
-        PmenuSbar = { bg = "#777777" },
-        PmenuThumb = { bg = "#333333" },
-        Question = { fg = ansi.green },
-        QuickFixLine = { bg = "#E2EEEE" },
-        Search = { bg = "#fae9b7", fg = fg },
+        PmenuSel = { bg = "#354c50" },
+        PmenuSbar = { bg = "#212f31" },
+        PmenuThumb = { bg = "#47666b" },
+        Question = { fg = diffadd },
+        QuickFixLine = { bg = "#182325" },
+        Search = { bg = "#354c50" },
         SpecialKey = { fg = ansi.cyan },
         SpellBad = { undercurl = 1, sp = ansi.red },
         SpellCap = { undercurl = 1, sp = ansi.blue },
@@ -498,11 +501,11 @@ else
         TabLineFill = { bg = statusline },
         TabLineSel = { bg = statusline, fg = ansi.blue },
         Title = { fg = const_fg },
-        Visual = { bg = "#bfdbfe" },
-        VisualNOS = { bg = "#bfdbfe" },
+        Visual = { bg = statusline },
+        VisualNOS = { bg = statusline },
         WarningMsg = { fg = "#e1ad4c" },
-        WildMenu = { bg = "#999999" },
-        WinBar = { bg = bg, fg = ansi.black, bold = true },
+        WildMenu = { bg = "#354c50" },
+        WinBar = { bg = bg, fg = ansi.white, bold = true },
         WinBarNC = { bg = bg, fg = "#7d7d7d" },
 
         --- SYNTAX I: TS groups link to these
@@ -515,32 +518,32 @@ else
         Operator = { fg = def_fg, bold = true },
 
         --- SYNTAX II: TS groups have their own definition, the below are defined to have somewhat working hl w/o treesitter
-        Identifier = { fg = ansi.black },
-        Function = { fg = ansi.black },
+        Identifier = { fg = ansi.white },
+        Function = { fg = function_fg },
         Statement = { fg = def_fg, bold = true },
         Conditional = { fg = def_fg, bold = true },
         Repeat = { fg = def_fg, bold = true },
-        Label = { fg = def_fg },
+        Label = { fg = ansi.white },
         Keyword = { fg = def_fg, bold = true },
-        Exception = { fg = ansi.black },
-        PreProc = { fg = "#B1D0EC" },
-        Include = { fg = "#B1D0EC" },
-        Define = { fg = "#B1D0EC"  },
-        Macro = { fg = "#B1D0EC"  },
-        PreCondit = { fg = "#B1D0EC" },
+        Exception = { fg = ansi.white },
+        PreProc = { fg = preproc_fg },
+        Include = { fg = preproc_fg },
+        Define = { fg = preproc_fg },
+        Macro = { fg = preproc_fg },
+        PreCondit = { fg = preproc_fg },
         Type = { fg = punct_fg },
-        StorageClass = { fg = ansi.black },
+        StorageClass = { fg = def_fg, bold = true },
         Structure = { fg = def_fg, bold = true },
-        Typedef = { fg = def_fg, bold = true },
+        Typedef = { fg = ansi.white },
 
         Special = { fg = ansi.yellow },
         -- TODO better color than diffchange, try reddish
         -- SpecialChar = { fg = diffchange }, --  special character in a constant
         -- Tag            { }, --    you can use CTRL-] on this
         -- Delimiter      { },
-        SpecialComment = { bg = "#FFDEAA", fg = ansi.blue },
-        debugPc = { bg = "#C7C7EE" },
-        debugBreakpoint = { bg = "#F8B28F" },
+        SpecialComment = { bg = "#1d292b", fg = ansi.blue },
+        debugPc = { bg = "#0f2534" },
+        debugBreakpoint = { bg = "#b33229" },
         helpHyperTextJump = { fg = ansi.magenta },
         helpSectionDelim = { fg = ansi.magenta },
         helpExample = { fg = ansi.cyan },
@@ -556,100 +559,99 @@ else
 
         Error = { bg = mistake.bg, fg = mistake.fg },
 
-        Todo = { bg = "#FFDEAA", fg = ansi.blue },
+        Todo = { bg = "#d0d058", fg = bg },
 
         --- Diagnostic
-        LspReferenceText = { bg = "#dadada" },
-        LspReferenceRdad = { bg = "#dadada" },
-        LspReferenceWrite = { bg = "#dadada", underline = 1, sp = active_blue },
-        LspCodeLens = { fg = "#999999" },
-        LspCodeLensSeparator = { fg = "#999999" },
+        LspReferenceText = { bg = "#253437" },
+        LspReferenceRead = { bg = "#253437" },
+        LspReferenceWrite = { bg = "#253437", underline = 1, sp = active },
+        LspCodeLens = { fg = "#5c5c5c" },
+        LspCodeLensSeparator = { fg = "#5c5c5c" },
 
         --- Diagnostic
         DiagnosticError = { fg = error },
         DiagnosticWarn = { fg = warn },
         DiagnosticHint = { fg = hint },
         DiagnosticInfo = { fg = info },
-        DiagnosticVirtualTextError = { bg = "#F8B28F", fg = "#411414" },
-        DiagnosticVirtualTextWarn = { bg = "#fff987", fg = fg },
-        DiagnosticVirtualTextHint = { fg = "#0F171D", bg = "#C3D0DA" },
-        DiagnosticVirtualTextInfo = { bg = "#ADFFB7", fg = "#042F09" },
+        DiagnosticVirtualTextError = { bg = "#350B0B", fg = "#D1503A" },
+        DiagnosticVirtualTextWarn = { bg = "#3F240A", fg = "#C8935D" },
+        DiagnosticVirtualTextHint = { bg = "#1D2B37", fg = "#7E9CB9" },
+        DiagnosticVirtualTextInfo = { bg = "#162C0B", fg = "#7BAC62" },
 
         --- Treesitter
         TSAttribute = {},
-        TSConstructor = { fg = ansi.black },
+        TSConstructor = { fg = ansi.white },
         TSConditional = { fg = def_fg, bold = true },
         TSConstBuiltin = { fg = const_fg },
-        TSConstMacro = { fg = ansi.black },
+        TSConstMacro = { fg = ansi.white },
         TSError = { bg = mistake.bg, fg = mistake.fg },
-        TSException = { fg = ansi.black },
-        TSField = { fg = ansi.black },
-        TSFunction = { fg = ansi.black },
-        TSFuncBuiltin = { fg = ansi.black },
-        TSFuncMacro = { fg = ansi.black },
-        TSKeyword = { fg = ansi.black, bold = true },
-        TSKeywordFunction = { fg = ansi.black },
-        TSLabel = { fg = ansi.black },
-        TSMethod = { fg = ansi.black },
-        TSNamespace = { fg = ansi.black },
+        TSException = { fg = ansi.white },
+        TSField = { fg = ansi.white },
+        TSFunction = { fg = ansi.white },
+        TSFuncBuiltin = { fg = ansi.white },
+        TSFuncMacro = { fg = ansi.white },
+        TSKeyword = { fg = ansi.white, bold = true },
+        TSKeywordFunction = { fg = ansi.white },
+        TSLabel = { fg = ansi.white },
+        TSMethod = { fg = ansi.white },
+        TSNamespace = { fg = ansi.white },
         TSNone = { fg = const_fg },
-        TSParameter = { fg = ansi.black },
-        TSParameterReference = { fg = ansi.black },
-        TSProperty = { fg = ansi.black },
+        TSParameter = { fg = ansi.white },
+        TSParameterReference = { fg = ansi.white },
+        TSProperty = { fg = ansi.white },
         TSPunctDelimiter = { fg = punct_fg },
-        TSPunctBracket = { fg = punct_fg },
+        TSPunctBracket = { fg = "#bababa" },
         TSPunctSpecial = { fg = punct_fg },
         TSRepeat = { fg = def_fg, bold = true },
         TSString = { fg = string_fg },
-        TSStringRegex = { bg = bg, fg = "#777777" },
-        TSStringEscape = { bg = bg, fg = "#777777" },
+        TSStringRegex = { bg = "#1d292b", fg = const_fg },
+        TSStringEscape = { bg = "#1d292b", fg = const_fg },
         TSSymbol = {},
         TSType = { fg = punct_fg },
-        TSTypeBuiltin = { fg = ansi.black, bold = true},
-        TSVariable = { fg = ansi.black },
-        TSVariableBuiltin = { fg = ansi.black },
-        TSTag = { fg = ansi.black },
+        TSTypeBuiltin = { fg = ansi.white, bold = true },
+        TSVariable = { fg = ansi.white },
+        TSVariableBuiltin = { fg = ansi.white },
+        TSTag = { fg = ansi.white },
         TSTagDelimiter = { fg = punct_fg },
-        TSText = { fg = ansi.black },
-
+        TSText = { fg = ansi.white },
         ["@attribute"] = {},
-        ["@constructor"] = { fg = ansi.black },
-        ["@conditional"] = { fg = ansi.black },
+        ["@constructor"] = { fg = ansi.white },
+        ["@conditional"] = { fg = ansi.white },
         ["@constant.builtin"] = { fg = const_fg },
-        ["@constant.macro"] = { fg = ansi.black },
+        ["@constant.macro"] = { fg = ansi.white },
         ["@error"] = { bg = mistake.bg, fg = mistake.fg },
-        ["@exception"] = { fg = ansi.black },
-        ["@field"] = { fg = ansi.black },
-        ["@function"] = { fg = ansi.black },
-        ["@function.builtin"] = { fg = ansi.black },
-        ["@function.macro"] = { fg = ansi.black },
-        ["@keyword"] = { fg = ansi.black },
-        ["@keyword.function"] = { fg = ansi.black },
-        ["@label"] = { fg = ansi.black },
-        ["@method"] = { fg = ansi.black },
-        ["@module"] = { fg = ansi.black },
-        ["@namespace"] = { fg = ansi.black },
+        ["@exception"] = { fg = ansi.white },
+        ["@field"] = { fg = ansi.white },
+        ["@function"] = { fg = ansi.white },
+        ["@function.builtin"] = { fg = ansi.white },
+        ["@function.macro"] = { fg = ansi.white },
+        ["@keyword"] = { fg = ansi.white },
+        ["@keyword.function"] = { fg = ansi.white },
+        ["@label"] = { fg = ansi.white },
+        ["@method"] = { fg = ansi.white },
+        ["@module"] = { fg = ansi.white },
+        ["@namespace"] = { fg = ansi.white },
         ["@none"] = { fg = const_fg },
-        ["@parameter"] = { fg = ansi.black },
-        ["@parameter.reference"] = { fg = ansi.black },
-        ["@property"] = { fg = ansi.black },
+        ["@parameter"] = { fg = ansi.white },
+        ["@parameter.reference"] = { fg = ansi.white },
+        ["@property"] = { fg = ansi.white },
         ["@punctuation.delimiter"] = { fg = punct_fg },
-        ["@punctuation.bracket"] = { fg = punct_fg },
+        ["@punctuation.bracket"] = { fg = "#bababa" },
         ["@punctuation.special"] = { fg = punct_fg },
-        ["@repeat"] = { fg = ansi.black },
+        ["@repeat"] = { fg = ansi.white },
         ["@string"] = { fg = string_fg },
-        ["@string.regex"] = { bg = bg, fg = "#777777" },
-        ["@string.escape"] = { bg = bg, fg = "#777777" },
+        ["@string.regex"] = { bg = "#1d292b", fg = const_fg },
+        ["@string.escape"] = { bg = "#1d292b", fg = const_fg },
         ["@symbol"] = {},
-        ["@type"] = { fg = ansi.black },
-        ["@type.builtin"] = { fg = ansi.black },
-        ["@variable"] = { fg = ansi.black },
-        ["@variable.builtin"] = { fg = ansi.black },
-        ["@tag"] = { fg = ansi.black },
+        ["@type"] = { fg = ansi.white },
+        ["@type.builtin"] = { fg = ansi.white },
+        ["@variable"] = { fg = ansi.white },
+        ["@variable.builtin"] = { fg = ansi.white },
+        ["@tag"] = { fg = ansi.white },
         ["@tag.delimiter"] = { fg = punct_fg },
-        ["@text"] = { fg = ansi.black },
-        ["@text.note"] = { bg = "#dddddd", fg = ansi.blue },
-        ["@text.warning"] = { bg = "#FFDEAA", fg = ansi.blue },
+        ["@text"] = { fg = ansi.white },
+        ["@text.note"] = { bg = "#1d292b", fg = ansi.blue },
+        ["@text.warning"] = { bg = "#d0d058", fg = bg },
 
         --- Theme specific
         ["@AlabasterConstant"] = { fg = const_fg },
@@ -658,19 +660,19 @@ else
         ["@AlabasterString"] = { fg = string_fg },
         ["@AlabasterHashbang"] = { fg = dim_comment },
         --- Gitsigns
-        GitSignsAdd = { fg = "#6abf40" },
+        GitSignsAdd = { fg = diffadd },
         GitSignsChange = { fg = diffchange },
         GitSignsDelete = { fg = diffdelete },
         --- Telescope
-        TelescopeBorder = { fg = "#abbdc0" },
-        TelescopeMatching = { fg = "#CC6F14" },
+        TelescopeBorder = { fg = "#2b3d40" },
+        TelescopeMatching = { fg = "#f09942" },
         TelescopeMultiSelection = { fg = ansi.magenta },
         TelescopePromptPrefix = { fg = ansi.blue },
         TelescopeSelectionCaret = { fg = mistake.fg },
-        TelescopeTitle = { fg = ansi.yellow },
+        TelescopeTitle = { fg = ansi.brightyellow },
         TelescopeResultsTitle = { fg = ansi.yellow },
         --- fzf-lua
-        FzfLuaBorder = { fg = "#abbdc0" },
+        FzfLuaBorder = { fg = "#2b3d40" },
         --- Neogit
         NeogitPopupActionDisabled = { fg = darker_fg },
         NeogitPopupActionKey = { fg = ansi.magenta },
@@ -684,13 +686,13 @@ else
         diffRemoved = { link = "DiffDelete" },
         --- Startify
         StartifyBracket = { fg = darker_fg },
-        StartifyFile = { fg = ansi.black },
+        StartifyFile = { fg = ansi.white },
         StartifySection = { fg = ansi.green },
         StartifySlash = { fg = "#4e6e75" },
         StartifyPath = { fg = "#4e6e75" },
         --- Statusline
         StatuslineAdd = { fg = diffadd, bg = statusline },
-        StatuslineErr = { fg = "#8E1410", bg = statusline },
+        StatuslineErr = { fg = error, bg = statusline },
         StatuslineHint = { fg = hint, bg = statusline },
         StatuslineInfo = { fg = info, bg = statusline },
         StatuslineWarn = { fg = warn, bg = statusline },
@@ -709,18 +711,18 @@ else
         AlabasterBrightYellow = { fg = ansi.brightyellow },
         AlabasterCyan = { fg = ansi.cyan },
         AlabasterGreen = { fg = ansi.green },
-        AlabasterBrightGreen = { fg = "#60cb00" },
+        AlabasterDarkGreen = { fg = "#6abf40" },
         AlabasterMagenta = { fg = ansi.magenta },
         AlabasterRed = { fg = ansi.red },
-        AlabasterWhite = { fg = ansi.black },
+        AlabasterWhite = { fg = ansi.white },
         AlabasterYellow = { fg = ansi.yellow },
         --- Hop
-        HopNextKey = { fg = ansi.yellow },
-        HopNextKey1 = { fg = ansi.blue },
-        HopNextKey2 = { fg = "#17A2D6" },
-        HopUnmatched = { fg = "#bfbfbf" },
+        HopNextKey = { fg = ansi.brightyellow },
+        HopNextKey1 = { fg = ansi.cyan },
+        HopNextKey2 = { fg = "#297567" },
+        HopUnmatched = { fg = "#3d3d3d" },
         --- Lightspeed
-        LightspeedGreyWash = { fg = "#bfbfbf" },
+        LightspeedGreyWash = { fg = "#3d3d3d" },
         --- checkhealth
         healthSuccess = { fg = ansi.green, bg = bg },
         --- cmp
@@ -735,22 +737,22 @@ else
         rainbowcol7 = { fg = ansi.cyan },
         --- Iswap
         ISwapSnipe = { bg = ansi.yellow, fg = bg },
-        ISwapGrey = { fg = "#bfbfbf" },
+        ISwapGrey = { fg = "#3d3d3d" },
         --- vim-dadbod-ui
         dbui_help = { fg = dim_comment },
         dbui_connection_source = { fg = dim_comment },
         --- nvim-dap-virtual-text
-        NvimDapVirtualText = { bg = "#78D2C9", fg = fg },
+        NvimDapVirtualText = { bg = "#1d292b", fg = ansi.cyan },
         --- Noice
-        NoiceCmdlineIcon = { link = "AlabasterBrightGreen" },
-        NoiceCmdlinePopupBorder = { link = "AlabasterBrightGreen" },
-        NoiceConfirmBorder = { link = "AlabasterBrightGreen" },
-        NoiceCmdlinePopupBorderCmdline = { link = "AlabasterBrightGreen" },
-        NoiceCmdlineIconCmdline = { link = "AlabasterBrightGreen" },
-        NoiceCmdlinePopupBorderFilter = { link = "AlabasterBrightGreen" },
-        NoiceCmdlineIconFilter = { link = "AlabasterBrightGreen" },
-        NoiceCmdlinePopupBorderLua = { link = "AlabasterBrightGreen" },
-        NoiceCmdlineIconLua = { link = "AlabasterBrightGreen" },
+        NoiceCmdlineIcon = { link = "AlabasterDarkGreen" },
+        NoiceCmdlinePopupBorder = { link = "AlabasterDarkGreen" },
+        NoiceConfirmBorder = { link = "AlabasterDarkGreen" },
+        NoiceCmdlinePopupBorderCmdline = { link = "AlabasterDarkGreen" },
+        NoiceCmdlineIconCmdline = { link = "AlabasterDarkGreen" },
+        NoiceCmdlinePopupBorderFilter = { link = "AlabasterDarkGreen" },
+        NoiceCmdlineIconFilter = { link = "AlabasterDarkGreen" },
+        NoiceCmdlinePopupBorderLua = { link = "AlabasterDarkGreen" },
+        NoiceCmdlineIconLua = { link = "AlabasterDarkGreen" },
         NoiceCmdlinePopupBorderSearch = { link = "AlabasterYellow" },
         NoiceCmdlineIconSearch = { link = "AlabasterYellow" },
         -- Languages
