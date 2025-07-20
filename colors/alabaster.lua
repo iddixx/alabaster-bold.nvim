@@ -540,7 +540,7 @@ else
         -- TODO better color than diffchange, try reddish
         -- SpecialChar = { fg = diffchange }, --  special character in a constant
         -- Tag            { }, --    you can use CTRL-] on this
-        Delimiter      { fg = fg },
+        Delimiter  =  { fg = fg },
         SpecialComment = { bg = "#1d292b", fg = ansi.blue },
         debugPc = { bg = "#0f2534" },
         debugBreakpoint = { bg = "#b33229" },
