@@ -405,9 +405,9 @@ else
     -- colors
     local bg = "#331a30" -- 
     local fg = "#cecece" 
-    local punct_fg = "#996a87" --
+    local punct_fg = "#655689" --
     local def_fg = "#ff7fc0" --
-    local preproc_fg = "#5d3058"
+    local preproc_fg = "#723a6c"
     local const_fg = "#cc8bc9"
     local active = "#cd974b"
     local string_fg = "#95cb82"
@@ -418,7 +418,7 @@ else
     local statusline = "#482544" --
     local comment = "#9d45b3" --
     local dim_comment = "#696969"
-    local function_fg = "#723a6c"
+    local function_fg = "#996a87"
     local mistake = {
         fg = "#c33c33",
         bg = "#2b1d1e",
